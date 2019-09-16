@@ -25,12 +25,8 @@ namespace SyntaxAnalyser
 
             Parser parser = new Parser(inputLine);
 
-            string nextToken = "";
-            while (nextToken != null)
-            {
-                nextToken = parser.GetNextToken();
-                Console.WriteLine(nextToken);
-            }
+            Expression ex = parser.GetExpression();
+            Console.WriteLine(ex.Calculate());
 
         }
     }

@@ -55,9 +55,39 @@ namespace SyntaxAnalyser
                 i++;
             }
 
+        }      
+
+        public Expression GetExpression()
+        {
+            return null;
         }
 
-        public string GetNextToken()
+        Relation GetRelation()
+        {
+            return null;
+        }
+
+        Term GetTerm()
+        {
+            return null;
+        }
+
+        Factor GetFactor()
+        {
+            return null;
+        }
+
+        Primary GetPrimary()
+        {
+            return null;
+        }
+
+        Integer GetInteger()
+        {
+            return new Integer(int.Parse(GetNextToken()));
+        }
+
+        string GetNextToken()
         {
             if (iterator >= tokens.Count)
             {
@@ -68,6 +98,5 @@ namespace SyntaxAnalyser
                 return tokens[iterator++];
             }
         }
-
     }
 }
