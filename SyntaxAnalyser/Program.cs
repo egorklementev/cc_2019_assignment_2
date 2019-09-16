@@ -14,8 +14,7 @@ namespace SyntaxAnalyser
             {   
                 using (StreamReader sr = new StreamReader("input.txt"))
                 {
-                    inputLine = sr.ReadToEnd();
-                    Console.WriteLine(inputLine);
+                    inputLine = sr.ReadToEnd();                    
                 }
             }
             catch (IOException e)
@@ -24,8 +23,14 @@ namespace SyntaxAnalyser
                 Console.WriteLine(e.Message);
             }
 
-
             Parser parser = new Parser(inputLine);
+
+            string nextToken = "";
+            while (nextToken != null)
+            {
+                nextToken = parser.GetNextToken();
+                Console.WriteLine(nextToken);
+            }
 
         }
     }
