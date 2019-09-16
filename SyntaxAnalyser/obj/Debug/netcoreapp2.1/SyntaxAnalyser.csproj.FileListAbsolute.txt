@@ -1,0 +1,11 @@
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\bin\Debug\netcoreapp2.1\SyntaxAnalyser.deps.json
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\bin\Debug\netcoreapp2.1\SyntaxAnalyser.runtimeconfig.json
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\bin\Debug\netcoreapp2.1\SyntaxAnalyser.runtimeconfig.dev.json
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\bin\Debug\netcoreapp2.1\SyntaxAnalyser.dll
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\bin\Debug\netcoreapp2.1\SyntaxAnalyser.pdb
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\obj\Debug\netcoreapp2.1\SyntaxAnalyser.csprojAssemblyReference.cache
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\obj\Debug\netcoreapp2.1\SyntaxAnalyser.csproj.CoreCompileInputs.cache
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\obj\Debug\netcoreapp2.1\SyntaxAnalyser.AssemblyInfoInputs.cache
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\obj\Debug\netcoreapp2.1\SyntaxAnalyser.AssemblyInfo.cs
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\obj\Debug\netcoreapp2.1\SyntaxAnalyser.dll
+D:\lectures\Compiler Construction\assignment2\SyntaxAnalyser\SyntaxAnalyser\obj\Debug\netcoreapp2.1\SyntaxAnalyser.pdb
