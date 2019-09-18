@@ -6,8 +6,15 @@ namespace SyntaxAnalyser
 {
     class Binary<T> : Expression
     {
-        public T left;
-        public T right;
-        
+
+        protected T left;
+        protected T right;
+
+        public Binary(T left, T right)
+        {
+            this.left = left;
+            this.right = right;
+        }
+
     }
 }

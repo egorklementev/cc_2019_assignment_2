@@ -7,7 +7,7 @@ namespace SyntaxAnalyser
     class Parenthesized : Primary
     {
 
-        Expression expression;
+        public Parenthesized(Expression expression) : base(expression.GetValue()) { }
 
     }
 }

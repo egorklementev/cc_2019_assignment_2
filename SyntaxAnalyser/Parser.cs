@@ -5,13 +5,10 @@ using System.Text;
 namespace SyntaxAnalyser
 {
     class Parser
-    {
-        int iterator = 0;
-        List<string> tokens;
-
-        public Parser(string input)
+    {   
+        public static List<string> Parse(string input)
         {
-            tokens = new List<string>();
+            List<string> tokens = new List<string>();
 
             int i = 0;
             while (i < input.Length)
@@ -55,48 +52,7 @@ namespace SyntaxAnalyser
                 i++;
             }
 
-        }      
-
-        public Expression GetExpression()
-        {
-            return null;
-        }
-
-        Relation GetRelation()
-        {
-            return null;
-        }
-
-        Term GetTerm()
-        {
-            return null;
-        }
-
-        Factor GetFactor()
-        {
-            return null;
-        }
-
-        Primary GetPrimary()
-        {
-            return null;
-        }
-
-        Integer GetInteger()
-        {
-            return new Integer(int.Parse(GetNextToken()));
-        }
-
-        string GetNextToken()
-        {
-            if (iterator >= tokens.Count)
-            {
-                return null;
-            }
-            else
-            {
-                return tokens[iterator++];
-            }
+            return tokens;
         }
     }
 }

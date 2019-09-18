@@ -23,10 +23,11 @@ namespace SyntaxAnalyser
                 Console.WriteLine(e.Message);
             }
 
-            Parser parser = new Parser(inputLine);
+            Expression ex = new Expression();
+            ex.SetTokens(Parser.Parse(inputLine));
+            ex.BuildExpression();
 
-            Expression ex = parser.GetExpression();
-            Console.WriteLine(ex.Calculate());
+            Console.WriteLine(ex.GetValue());
 
         }
     }
