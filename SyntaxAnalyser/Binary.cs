@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SyntaxAnalyser
+﻿namespace SyntaxAnalyser
 {
-    class Binary<T> : Expression
+    class Binary<L, R> : Expression
     {
 
-        protected T left;
-        protected T right;
+        protected L left;
+        protected R right;
 
-        public Binary(T left, T right)
+        public Binary(L left, R right)
         {
             this.left = left;
             this.right = right;

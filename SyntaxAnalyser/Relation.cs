@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SyntaxAnalyser
+﻿namespace SyntaxAnalyser
 {
-    class Relation : Binary<Term>
+    class Relation : Binary<Term, Term>
     {
         readonly int type;
 

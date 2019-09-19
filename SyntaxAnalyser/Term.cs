@@ -1,35 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace SyntaxAnalyser
 {
-    class Term : Binary<Factor>
+    class Term : Binary<Factor, List<Factor>>
     {
-        readonly int type;
-        
-        public Term(Factor left, Factor right, int type) : base(left, right)
+        List<string> sign_tokens;
+
+        public Term(Factor left, List<Factor> right, List<string> sign_tokens) : base(left, right)
         {
-            this.type = type;
+            this.sign_tokens = sign_tokens;
         }
 
         new public int GetValue()
         {
-            if (left != null && right != null)
+            int val = left.GetValue();
+            if (right != null)
             {
-                switch(type)
+                int iter = 0;
+                foreach (Factor f in right)
                 {
-                    case 1:
-                        return left.GetValue() + right.GetValue();
-                    case 2:
-                        return left.GetValue() - right.GetValue();
+                    switch (sign_tokens[iter])
+                    {
+                        case "+":
+                            val += f.GetValue();
+                            break;
+                        case "-":
+                            val -= f.GetValue();
+                            break;
+                    }
+                    iter++;
                 }
-                return left.GetValue();
-            }
-            else
-            {
-                return left.GetValue();
-            }
+            }            
+            return val;
         }
 
     }

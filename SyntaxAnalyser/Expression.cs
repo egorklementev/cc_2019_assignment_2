@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SyntaxAnalyser
 {
@@ -49,6 +48,8 @@ namespace SyntaxAnalyser
         Term GetTerm()
         {
             Factor left = GetFactor();
+            List<Factor> right = null;
+            List<string> signs = null;
 
             while (true)
             {
@@ -58,16 +59,26 @@ namespace SyntaxAnalyser
                 {
                     break;
                 }
-
-                Factor right = GetFactor();
-
+                
                 if (next_token == "+")
                 {
-                    return new Term(left, right, 1);
+                    if (right == null)
+                        right = new List<Factor>();
+                    right.Add(GetFactor());
+
+                    if (signs == null)
+                        signs = new List<string>();
+                    signs.Add("+");
                 }
                 else if (next_token == "-")
                 {
-                    return new Term(left, right, 2);
+                    if (right == null)
+                        right = new List<Factor>();
+                    right.Add(GetFactor());
+
+                    if (signs == null)
+                        signs = new List<string>();
+                    signs.Add("-");
                 }
                 else
                 {
@@ -76,12 +87,13 @@ namespace SyntaxAnalyser
                 }
             }
 
-            return new Term(left, null, 0);
+            return new Term(left, right, signs);
         }
 
         Factor GetFactor()
         {
             Primary left = GetPrimary();
+            List<Primary> right = null;
 
             while (true)
             {
@@ -92,11 +104,11 @@ namespace SyntaxAnalyser
                     break;
                 }
 
-                Primary right = GetPrimary();
-
                 if (next_token == "*")
                 {
-                    return new Factor(left, right);
+                    if (right == null)
+                        right = new List<Primary>();
+                    right.Add(GetPrimary());
                 }
                 else
                 {
@@ -105,7 +117,7 @@ namespace SyntaxAnalyser
                 }
             }
 
-            return new Factor(left, null);
+            return new Factor(left, right);
         }
 
         Primary GetPrimary()
@@ -162,7 +174,7 @@ namespace SyntaxAnalyser
 
                     tokens = new_lst;
 
-                    iterator = old_indx;
+                    iterator = old_indx + 1;
 
                     return new Parenthesized(exp);
                 }

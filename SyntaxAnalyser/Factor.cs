@@ -1,19 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace SyntaxAnalyser
 {
-    class Factor : Binary<Primary>
+    class Factor : Binary<Primary, List<Primary>>
     {
 
-        public Factor(Primary left, Primary right) : base(left, right) { }
+        public Factor(Primary left, List<Primary> right) : base(left, right) { }
 
         new public int GetValue()
         {
             if (left != null && right != null)
             {
-                return left.GetValue() * right.GetValue();
+                int val = left.GetValue();
+                foreach (Primary p in right)
+                {
+                    val *= p.GetValue();
+                }
+                return val;
             }
             else
             {
